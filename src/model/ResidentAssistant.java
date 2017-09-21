@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Set;
 
 /**
@@ -18,8 +20,11 @@ public class ResidentAssistant {
 
     @Override
     public String toString() {
+        ArrayList<Integer> blockOutDaysArr = new ArrayList<>(this.blockOutDays);
+        Collections.sort(blockOutDaysArr);
+
         String blockOutDays = "";
-        for (Integer day : this.blockOutDays) {
+        for (Integer day : blockOutDaysArr) {
             blockOutDays += day + " ";
         }
         return "Name: " + this.name + " Points: " + this.accumPoints + " Block-out dates: " + blockOutDays;
