@@ -64,8 +64,8 @@ public class DutyRoster {
         // Shuffle the list (to a pick random duty slot in duty group)
         Collections.shuffle(dutySlotList);
 
-        List<ResidentAssistant> availableRaList = new ArrayList<>();
         for (DutySlot dutySlot : dutySlotList) {
+            List<ResidentAssistant> availableRaList = new ArrayList<>();
             // Find the available people
             this.residentAssistants.forEach(residentAssistant -> {
                 if (residentAssistant.isAvailable(dutySlot.getDay())) availableRaList.add(residentAssistant);
